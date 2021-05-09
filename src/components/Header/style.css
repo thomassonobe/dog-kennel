@@ -1,0 +1,16 @@
+.App-Header{
+  height: 10vh;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.App-Header .logo{
+  align-items: center;
+}
+
+.App-Header .logo > img{
+  width: 8vh;
+  height: 8vh;
+  margin: 2vh
+}
+

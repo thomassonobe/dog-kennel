@@ -1,4 +1,4 @@
-export const petshopsList = [
+export const petshops = [
   {
     id: 0,
     name: "Meu canino feliz",

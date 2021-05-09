@@ -1,0 +1,27 @@
+*{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+}
+
+button{
+  width: fit-content;
+  padding: 1rem;
+}
+
+.row{
+  display: flex;
+}
+
+.column{
+  display: flex;
+  flex-direction: column;
+}
+
+.App{
+  background-color: rgb(255, 201, 54);
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
