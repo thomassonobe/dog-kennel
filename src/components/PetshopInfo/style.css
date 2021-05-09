@@ -1,0 +1,25 @@
+.App-PetshopInfo{
+  margin-top: 24vh;
+  background-color: #141414;
+  color: whitesmoke;
+  width: 44vw;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+.App-PetshopInfo > *{
+  margin-bottom: 1rem;
+}
+
+.App-PetshopInfo .desciption{
+  width: 100%;
+}
+
+.App-PetshopInfo .divider{
+  height: 0.1rem;
+  width: 100%;
+  background-color: whitesmoke;
+}
+
+.App-PetshopInfo .desciption span{
+  text-align: end;
+}

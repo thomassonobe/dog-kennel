@@ -1,13 +1,33 @@
 .App-Form{
   align-items: center;
-  background-color: rgb(255, 219, 17);
-  width: min-content;
-}
-
-/* .App-Form form{
-  width: 20vw;
+  width: 30vw;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: #141414;
+  color: whitesmoke;
+  margin-top: 24vh;
 }
 
 .App-Form form input{
-  width: 20vw;
-} */
+  background-color: inherit;
+  height: 2rem;
+  border-radius: 0.5rem;
+  border: 1px solid whitesmoke;
+  color: whitesmoke;
+  margin-bottom: 1rem;
+}
+
+.App-Form form p{
+  margin-bottom: 0.5rem;
+}
+
+.App-Form button{
+  background-color: rgb(255, 201, 54);
+  border-radius: 0.5rem;
+  border: none;
+}
+
+.App-Form button:hover{
+  background-color: #141414;
+  color: rgb(255, 201, 54);
+}

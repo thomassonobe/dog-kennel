@@ -8,7 +8,7 @@ const formStateModel = {
   large: 0
 }
 
-const Form = ({ setSelectedPesthop }) => {
+const Form = ({ setSelectedPetshop, setOrder }) => {
   const [formState, setFormState] = useState(formStateModel)
 
   const handleChange = (e) => {
@@ -28,7 +28,7 @@ const Form = ({ setSelectedPesthop }) => {
   const handleClick = () => {
     let petshop
     if (isWeekend(formState.date)) {
-      petshop = petshops.reduce((accumulator, petshop, index) => {
+      petshop = petshops.reduce((accumulator, petshop) => {
         if ((petshop.price.weekend.small * formState.small) + (petshop.price.weekend.large * formState.large) < (accumulator.price.weekend.small * formState.small) + (accumulator.price.weekend.large * formState.large)) {
           accumulator = petshop
         } else if ((petshop.price.weekend.small * formState.small) + (petshop.price.weekend.large * formState.large) === (accumulator.price.weekend.small * formState.small) + (accumulator.price.weekend.large * formState.large)) {
@@ -38,19 +38,44 @@ const Form = ({ setSelectedPesthop }) => {
         }
         return accumulator
       })
+      setSelectedPetshop(petshop)
+      setOrder(
+        {
+          "small": {
+            "amount": formState.small,
+            "value": petshop.price.weekend.small
+          },
+          "large": {
+            "amount": formState.large,
+            "value": petshop.price.weekend.large
+          },
+        }
+      )
     } else {
-      petshop = petshops.reduce((accumulator, petshop, index) => {
-        if ((petshop.price.weekend.small * formState.small) + (petshop.price.weekend.large * formState.large) < (accumulator.price.weekend.small * formState.small) + (accumulator.price.weekend.large * formState.large)) {
+      petshop = petshops.reduce((accumulator, petshop) => {
+        if ((petshop.price.workday.small * formState.small) + (petshop.price.workday.large * formState.large) < (accumulator.price.workday.small * formState.small) + (accumulator.price.workday.large * formState.large)) {
           accumulator = petshop
-        } else if ((petshop.price.weekend.small * formState.small) + (petshop.price.weekend.large * formState.large) === (accumulator.price.weekend.small * formState.small) + (accumulator.price.weekend.large * formState.large)) {
+        } else if ((petshop.price.workday.small * formState.small) + (petshop.price.workday.large * formState.large) === (accumulator.price.workday.small * formState.small) + (accumulator.price.workday.large * formState.large)) {
           if (petshop.distance < accumulator.distance) {
             accumulator = petshop
           }
         }
         return accumulator
       })
+      setSelectedPetshop(petshop)
+      setOrder(
+        {
+          "small": {
+            "amount": formState.small,
+            "value": petshop.price.workday.small
+          },
+          "large": {
+            "amount": formState.large,
+            "value": petshop.price.workday.large
+          },
+        }
+      )
     }
-    setSelectedPesthop(petshop)
   }
 
   return (
@@ -80,7 +105,11 @@ const Form = ({ setSelectedPesthop }) => {
           onChange={handleChange}
         />
       </form>
-      <button onClick={handleClick}>Buscar melhor Pet Shop</button>
+      <button
+        onClick={handleClick}
+        disabled={formState.date === "" || (formState.large === 0 && formState.small === 0)}>
+        Buscar o melhor Pet Shop
+      </button>
     </section>
   )
 }

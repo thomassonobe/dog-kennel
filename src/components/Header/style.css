@@ -1,16 +1,28 @@
 .App-Header{
-  height: 10vh;
+  height: 12vh;
   justify-content: space-between;
   align-items: center;
+  background-color: black;
+  color: whitesmoke;
 }
 
 .App-Header .logo{
   align-items: center;
+  cursor: pointer;
 }
 
 .App-Header .logo > img{
   width: 8vh;
   height: 8vh;
-  margin: 2vh
+  margin: 2vh;
 }
 
+.App-Header button{
+  width: 24%;
+  height: auto;
+  background-color: rgb(255, 201, 54);
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  margin-right: 1rem;
+}
