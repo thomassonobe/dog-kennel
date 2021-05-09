@@ -2,7 +2,7 @@
   height: 12vh;
   justify-content: space-between;
   align-items: center;
-  background-color: black;
+  background-color: #141414;
   color: whitesmoke;
 }
 
@@ -15,8 +15,14 @@
   width: 8vh;
   height: 8vh;
   margin: 2vh;
+  color: rgb(255, 201, 54);
 }
-
+.App-Header .logo > svg{
+  width: 8vh;
+  height: 8vh;
+  margin: 2vh;
+  fill: rgb(255, 201, 54);
+}
 .App-Header button{
   width: 24%;
   height: auto;

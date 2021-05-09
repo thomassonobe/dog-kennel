@@ -1,7 +1,6 @@
 import React from 'react';
 import './style.css'
 const PetshopInfo = ({ selectedPetshop, order }) => {
-  console.log(order)
   const { small, large } = order
   return (
     <div className="App-PetshopInfo">
