@@ -1,0 +1,9 @@
+.App-card{
+  background-color: rgb(255, 201, 54);
+  width: 30vw;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+.App-card .price-container{
+  margin: 0.5rem 0;
+}
